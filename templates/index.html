@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodeQuest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: lightblue;">
+  <h1>QuestionSearch: LeetCode-Question-Finder</h1>
+  <div class="form">
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      {{ form.search.label }}
+      {{ form.search() }}
+      {{ form.submit() }}
+    </form>
+  </div>
+
+  {% if results %}
+    <div class="results">
+      <div class="results-box">
+        <h2>Results</h2>
+        {% for (result, q_heading) in results %}
+        <div class="results-item">
+          <p class="index">{{ loop.index }}.</p>
+          <a href="{{ result }}" target="_blank">{{ q_heading }}</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+    <p>Welcome!</p>
+    {% if search_triggered %}
+        <p>No results found, please try with other related word(s).</p>
+    {% endif %}
+  {% endif %}
+</body>
+</html>
