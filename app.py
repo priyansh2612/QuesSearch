@@ -43,14 +43,14 @@ def load_inverted_index():
 
 # Function to load links from Qindex.txt
 def load_link_of_qs():
-    with open("Question Scrapper\Qindex.txt", "r") as f:
+    with open("Question Scrapper\data\Qindex.txt", "r") as f:
         links = f.readlines()
 
     return links
 
 # Function to load headings from index.txt
 def load_headings():
-    with open("Question Scrapper\index.txt", "r", encoding='utf-8', errors="ignore") as f:
+    with open("Question Scrapper\data\index.txt", "r", encoding='utf-8', errors="ignore") as f:
         lines = f.readlines()
 
     headings = []
